@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="background"> #000000</color>
+    <color name="display_background"> #1E1E1E</color>
+    <color name="display_text"> #FFFFFF</color>
+    <color name="orion_blue"> #007FFF</color>
+
+    <!-- Cores para os botões-->
+    <color name="memory_button">#007AFF</color>
+    <color name="memory_button_pressed"> #0055CC</color>
+
+    <color name="function_button">#A5A5A5</color>
+    <color name="function_button_pressed">#7A7A7A</color>
+
+    <color name="number_button">#333333</color>
+    <color name="number_button_pressed">#1A1A1A</color>
+
+    <color name="operation_button">#FF9500</color>
+    <color name="operation_button_pressed">#CC7700</color>
+
+    <color name="equals_button">#FF2F55</color>
+    <color name="equals_button_pressed">#CC2244</color>
+
+    <color name="clear_button">#FF3B30</color>
+    <color name="clear_button_pressed">#CC3026</color>
+
+    <color name="backspace_button">#A5A5A5</color>
+    <color name="backspace_button_pressed">#7A7A7A</color>
 </resources>
