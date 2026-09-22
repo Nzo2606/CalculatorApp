@@ -1,3 +1,7 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">ORION_CALCULATOR_SENAI_ENZO</string>
+=======
+    <string name="app_name">Calculadora Avançada</string>
+>>>>>>> origin/master
 </resources>

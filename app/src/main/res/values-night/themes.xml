@@ -1,7 +1,29 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+<<<<<<< HEAD
     <style name="Base.Theme.ORION_CALCULATOR_SENAI_ENZO" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+=======
+    <style name="Base.Theme.ORION_CALCULATOR_SENAI_ENZO"
+        parent="Theme.Material3.DayNight.NoActionBar">
+
+    <!-- Cor Principal -->
+
+    <item name="colorPrimary">@color/orion_blue</item>
+    <item name="colorPrimaryDark">@color/orion_blue</item>
+
+    <!-- Status Bar (barra do topo) -->
+    <item name="android:statusBarColor">@color/orion_blue</item>
+    <item name="android:navigationBarColor">@color/background</item>
+
+    <!-- Ícone de status bar claro (brancos)-->
+    <item name="android:windowLightStatusBar">@color/orion_blue</item>
+
+    </style>
+
+    <style name="Theme.ORION_CALCULATOR_SENAI_ENZO."
+        parent= "Theme.Material3.DayNight.NoActionBar"/>
+>>>>>>> origin/master
 </resources>
