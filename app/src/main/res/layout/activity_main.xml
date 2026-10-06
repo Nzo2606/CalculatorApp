@@ -223,7 +223,7 @@
                 android:background="@drawable/button_function" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_sqrt"
+                android:id="@+id/btn_cube_root"
                 style="@style/CalcButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
