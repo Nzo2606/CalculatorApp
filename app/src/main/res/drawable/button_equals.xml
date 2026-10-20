@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-=======
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
@@ -16,5 +13,5 @@
             <solid android:color="@color/equals_button"/>
         </shape>
     </item>
->>>>>>> origin/master
+
 </selector>

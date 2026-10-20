@@ -61,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
 
         // ===== FUNÇÕES ESPECIAIS =====
         findViewById(R.id.btn_sign).setOnClickListener(v -> onSignButtonClick());
-        findViewById(R.id.btn_percent).setOnClickListener(v -> onPercentualButtonClick);
-        findViewById(R.id.btn_c).setOnClickListener(v -> onClearButtonClick);
+        findViewById(R.id.btn_percent).setOnClickListener(v -> onPercentualButtonClick());
+        findViewById(R.id.btn_c).setOnClickListener(v -> onClearButtonClick());
         findViewById(R.id.btn_ce).setOnClickListener(v -> onClearEntryButtonClick());
         findViewById(R.id.btn_backspace).setOnClickListener(v -> onBackspaceButtonClick());
         findViewById(R.id.btn_reciprocal).setOnClickListener(v -> onReciprocalButtonClick());
-        findViewById(R.id.btn_square).setOnClickListener(v -> onSquareButtonClick());
+        findViewById(R.id.btn_square).setOnClickListener(v -> onSquareClick());
         findViewById(R.id.btn_cube_root).setOnClickListener(v -> onCubeRootButtonClick());
 
         // ===== MEMÓRIA =====
@@ -78,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_mv).setOnClickListener(v -> onMemoryView());
 
     }
+
+
 
     // ===== NÚMEROS =====
 
@@ -135,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onEqualsButtonClick() {
-        if (!Double.isNaN(operand1) || currentOperator.isEmpty()){
+        if (Double.isNaN(operand1) || currentOperator.isEmpty()){
             return;
         }
         try {
@@ -166,8 +168,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
+        currentInput = formatResult(result);
+        operand1 = Double.NaN;
         currentOperator = "";
         resetScreen = true;
+
+        updateDisplay();
     }
 
 
@@ -182,6 +188,143 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void resetCalculator() {
+// ================= FUNÇÕES ESPECIAIS =================
+
+
+    private void onSignButtonClick() {
+        if (currentInput.isEmpty() || currentInput.equals("0")) return;
+        double value = Double.parseDouble(currentInput);
+        value = -value;
+        currentInput = formatResult(value);
+        updateDisplay();
     }
+
+
+    private void onPercentualButtonClick() {
+        if (currentInput.isEmpty()) return;
+        double value = Double.parseDouble(currentInput);
+        value = value / 100;
+        currentInput = formatResult(value);
+        updateDisplay();
+    }
+
+
+    private void onClearButtonClick() {
+        resetCalculator();
+        updateDisplay();
+    }
+
+    private void onClearEntryButtonClick() {
+        currentInput = "0";
+        updateDisplay();
+    }
+
+    private void onBackspaceButtonClick() {
+        if (currentInput.length() > 0) {
+            currentInput = currentInput.substring(0, currentInput.length() -1);
+        }
+        if (currentInput.isEmpty() || currentInput.equals("-")){
+            currentInput = "0";
+        }
+        updateDisplay();
+    }
+
+
+    private void onReciprocalButtonClick() {
+        if (currentInput.isEmpty()) return;
+        double value = Double.parseDouble(currentInput);
+        if (value != 0 ){
+            value = 1 / value;
+            currentInput = formatResult(value);
+            updateDisplay();
+            resetScreen = true;
+        }else {
+            display.setText("Error");
+            resetCalculator();
+        }
+    }
+
+
+
+    private void onSquareClick() {
+        if (currentInput.isEmpty()) return;
+        double value = Double.parseDouble(currentInput);
+        value = value * value;
+        currentInput = formatResult(value);
+        updateDisplay();
+        resetScreen = true;
+    }
+
+    private void onCubeRootButtonClick() {
+        if (currentInput.isEmpty()) return;
+        double value = Double.parseDouble(currentInput);
+        value = Math.cbrt(value);
+        currentInput = formatResult(value);
+        updateDisplay();
+        resetScreen = true;
+         }
+
+
+
+// ================= MEMÓRIA =================
+
+    private void onMemoryClear() {
+        memory = 0.0;
+        display.setText("MC");
+    }
+
+    private void onMemoryRecall() {
+        currentInput = formatResult(memory);
+        updateDisplay();
+        resetScreen = true;
+    }
+
+
+    private void onMemoryAdd() {
+        try{
+            double value = Double.parseDouble(currentInput);
+            memory += value;
+            display.setText("M+");
+        }catch (NumberFormatException e){ }
+        resetScreen = true;
+    }
+
+    private void onMemorySubtract() {
+        try{
+            double value = Double.parseDouble(currentInput);
+            memory -= value;
+            display.setText("M-");
+        }catch (NumberFormatException e){ }
+        resetScreen = true;
+    }
+
+
+    private void onMemoryStore() {
+        try{
+            memory = Double.parseDouble(currentInput);
+            display.setText("MS");
+        }catch (NumberFormatException e){
+            memory = 0.0;
+        }
+        resetScreen = true;
+    }
+
+    private void onMemoryView() {
+        display.setText("M: " + formatResult(memory));
+    }
+
+
+// ================= AUXILIARES =================
+
+    private void resetCalculator() {
+        currentInput = "0";
+        currentOperator = "";
+        operand1 = Double.NaN;
+        resetScreen = true;
+    }
+
+    private void updateDisplay() {
+        display.setText(currentInput.isEmpty() ? "0" : currentInput);
+    }
+
 }

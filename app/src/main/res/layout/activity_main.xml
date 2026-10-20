@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-=======
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
->>>>>>> origin/master
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    android:orientation="vertical"
-    android:background="@color/background"
-    android:padding="12dp"
-    tools:context=".MainActivity">
-=======
     android:fillViewport="true"
     android:background="@color/background">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +16,7 @@
         android:orientation="vertical"
         android:padding="12dp"
         tools:context=".MainActivity">
->>>>>>> origin/master
+
 
     <!-- Logo Central -->
 
@@ -35,14 +28,13 @@
         android:layout_gravity="center"
         android:contentDescription="Logo Senai"/>
 
-<<<<<<< HEAD
     <!-- Título do App -->
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ORION Calculator"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:textColor="@color/display_text"
@@ -51,7 +43,7 @@
 
 
 
-=======
+
     <!-- Display -->
 
     <TextView
@@ -68,25 +60,17 @@
         android:padding="12dp"
         android:background="@drawable/display_background"
         android:textColor="@color/display_text"/>
->>>>>>> origin/master
 
 
     <!-- Linha 1: Memória -->
 
     <LinearLayout
         android:layout_width="match_parent"
-<<<<<<< HEAD
-        android:layout_height="match_parent"
-=======
         android:layout_height="wrap_content"
->>>>>>> origin/master
         android:orientation="horizontal"
         android:weightSum="6">
 
         <androidx.appcompat.widget.AppCompatButton
-<<<<<<< HEAD
-            android:id="@+id/mr"
-=======
             android:id="@+id/btn_mc"
             style="@style/CalcButton"
             android:layout_width="0dp"
@@ -97,7 +81,6 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_mr"
->>>>>>> origin/master
             style="@style/CalcButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -105,23 +88,13 @@
             android:text="MR"
             android:background="@drawable/button_memory"/>
 
-<<<<<<< HEAD
-    </LinearLayout>
-
-
-
-
-
-
-</LinearLayout>
-=======
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_m_plus"
             style="@style/CalcButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="MC"
+            android:text="M+"
             android:background="@drawable/button_memory"/>
 
         <androidx.appcompat.widget.AppCompatButton
@@ -463,4 +436,4 @@
 
     </LinearLayout>
 </ScrollView>
->>>>>>> origin/master
+

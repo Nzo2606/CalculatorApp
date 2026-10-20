@@ -31,6 +31,16 @@ android {
     }
 }
 
+// ESTE BLOCO FORÇA O GRADLE A USAR VERSÕES COMPATÍVEIS COM O SDK 34
+configurations.all{
+    resolutionStrategy{
+        force("androidx.activity:activity:1.9.3")
+        force("androidx.core:core:1.13.1")
+        force("androidx.core:core-ktx:1.13.1")
+    }
+}
+
+
 dependencies {
 
     implementation(libs.appcompat)
